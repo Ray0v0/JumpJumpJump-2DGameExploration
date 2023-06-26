@@ -132,8 +132,10 @@ public class MainThread extends JFrame implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        if(e.getKeyChar() == 'w' || e.getKeyChar() == 'W')
+        if(e.getKeyChar() == 'w' || e.getKeyChar() == 'W') {
             Character.jump = false;
+            Character.notLastJump = true;
+        }
         else if(e.getKeyChar() == 'a' || e.getKeyChar() == 'A')
             Character.left = false;
         else if(e.getKeyChar() == 'd' || e.getKeyChar() == 'D')

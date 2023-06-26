@@ -1,7 +1,9 @@
 package core.background;
 
 import core.MainThread;
+import core.character.Character;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -17,7 +19,7 @@ public class Background {
 
     public static double skyRate = 1;
 
-    public static double[] snowSpeed = new double[]{-0.2 * frameInterval, 0.2 * frameInterval}; // 关联帧率
+    public static double[] snowSpeed = new double[]{-0.1 * frameInterval, 0.1 * frameInterval}; // 关联帧率
 
     public static ArrayList<double[]> snowPoses = new ArrayList<>();
 
@@ -64,8 +66,8 @@ public class Background {
 
             paintSnow((int)pos[0], (int)pos[1], 2);
 
-            pos[0] += snowSpeed[0];
-            pos[1] += snowSpeed[1];
+            pos[0] += snowSpeed[0] - Character.direction * Character.moveVelocity * frameInterval;
+            pos[1] += snowSpeed[1] - Character.dropVelocity * frameInterval;
         }
     }
 
