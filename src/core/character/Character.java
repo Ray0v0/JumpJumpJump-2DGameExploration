@@ -26,6 +26,10 @@ public class Character {
 
     public static boolean notLastJump = true;
 
+    public static void init() {
+
+    }
+
     public static void main() {
 
         paintCharacter();

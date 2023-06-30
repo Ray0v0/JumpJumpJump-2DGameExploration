@@ -17,6 +17,10 @@ public class Camera {
 
     public static boolean lock = false;
 
+    public static void init() {
+
+    }
+
     public static void main() {
         if (lock) {
             lock();

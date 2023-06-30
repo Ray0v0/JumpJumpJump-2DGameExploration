@@ -61,7 +61,7 @@ public class Background {
 
             if (!legalPos(pos[0], pos[1])) {
                 pos[0] = random.nextDouble(screen_w);
-                pos[1] = 0;
+                pos[1] = random.nextDouble(-50, 0);
             }
 
             paintSnow((int)pos[0], (int)pos[1], 2);

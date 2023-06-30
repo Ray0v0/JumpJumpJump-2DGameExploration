@@ -34,7 +34,7 @@ public class MainThread extends JFrame implements KeyListener {
     public static int frameIndex;
 
     //希望达到的每频之间的间隔时间 (毫秒)
-    public static int frameInterval = 11;
+    public static int frameInterval = 8;
 
     //cpu睡眠时间，数字越小说明运算效率越高
     public static int sleepTime, averageSleepTime;
@@ -51,7 +51,7 @@ public class MainThread extends JFrame implements KeyListener {
     public MainThread() {
 
         //弹出一个宽 为screen_w高为screen_h的Jpanel窗口，并把它放置屏幕中间。
-        setTitle("Java3DPaint");
+        setTitle("Java2DPaint");
         panel= (JPanel) this.getContentPane();
         panel.setPreferredSize(new Dimension(screen_w, screen_h));
         panel.setMinimumSize(new Dimension(screen_w,screen_h));
@@ -73,7 +73,12 @@ public class MainThread extends JFrame implements KeyListener {
 
         addKeyListener(this);
 
+
+        Background.init();
         Map.init();
+        Character.init();
+        Camera.init();
+
 
         while (true) {
             Background.main();
